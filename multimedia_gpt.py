@@ -151,9 +151,9 @@ class ConversationBot:
             )
         )
         AI_prompt = "Image file received.  "
-        self.agent.memory.buffer = (
-            self.agent.memory.buffer + Human_prompt + "AI: " + AI_prompt
-        )
+        # self.agent.memory.buffer = (
+        #     self.agent.memory.buffer + Human_prompt + "AI: " + AI_prompt
+        # )
         state = state + [(f"![](/file={image_filename})*{image_filename}*", AI_prompt)]
         print(
             f"\nProcessed run_image, Input image: {image_filename}\nCurrent state: {state}\n"
@@ -175,9 +175,9 @@ class ConversationBot:
             )
         )
         AI_prompt = "Audio file received.  "
-        self.agent.memory.buffer = (
-            self.agent.memory.buffer + Human_prompt + "AI: " + AI_prompt
-        )
+        # self.agent.memory.buffer = (
+        #     self.agent.memory.buffer + Human_prompt + "AI: " + AI_prompt
+        # )
         state = state + [(f"![](/file={audio_filename})*{audio_filename}*", AI_prompt)]
         print(
             f"\nProcessed run_audio, Input audio: {audio_filename}\nCurrent state: {state}\n"
