@@ -25,7 +25,7 @@ Multimedia GPT is able to process and understand large amounts of documents, ima
 
 Human may provide new images, audio recordings, videos, or other to Multimedia GPT with a description. The description helps Multimedia GPT to understand this file, but Multimedia GPT should use tools to finish following tasks, rather than directly imagine from the description.
 
-Overall, Multimedia GPT is a powerful tool that can help with a wide range of tasks and provide valuable insights and information on a wide range of topics. 
+Overall, Multimedia GPT is a powerful tool that can help with a wide range of tasks and provide valuable insights and information on a wide range of topics.
 
 
 TOOLS:
@@ -60,7 +60,7 @@ Previous conversation history:
 
 New input: {input}
 Since Multimedia GPT is a text language model, Multimedia GPT must use tools to observe images, videos, and audio recodings, rather than imagination.
-The thoughts and observations are only visible for Multimedia GPT, Multimedia GPT should remember to repeat important information in the final response for Human. 
+The thoughts and observations are only visible for Multimedia GPT, Multimedia GPT should remember to repeat important information in the final response for Human.
 Thought: Do I need to use a tool? {agent_scratchpad}"""
 
 os.makedirs("image", exist_ok=True)
@@ -110,9 +110,9 @@ class ConversationBot:
         )
 
     def run_text(self, text, state):
-        self.agent.memory.buffer = cut_dialogue_history(
-            self.agent.memory.buffer, keep_last_n_words=500
-        )
+        # self.agent.memory.buffer = cut_dialogue_history(
+        #     self.agent.memory.chat_memory, keep_last_n_words=500
+        # )
         res = self.agent({"input": text})
         res["output"] = res["output"].replace("\\", "/")
         response = re.sub(
@@ -193,7 +193,7 @@ class ConversationBot:
         PDFReader = globals()['PDFReader'](device='cpu')
         PDFReader.init_index(pdf_path)
         # pass
-        
+
 
 
     def run_multimedia(self, file, state, txt):
